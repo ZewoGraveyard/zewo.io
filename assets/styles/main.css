@@ -14,13 +14,11 @@ body {
 }
 
 .hero {
-	background-color: #2C2D3D;
-	background-image: -moz-linear-gradient(-45deg, rgba(255,112,96,0.35) 0%, rgba(255,112,96,0) 100%);
-	background-image: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,112,96,0.35)), color-stop(100%, rgba(255,112,96,0)));
-	background-image: -webkit-linear-gradient(-45deg, rgba(255,112,96,0.35) 0%, rgba(255,112,96,0) 100%);
-	background-image: -o-linear-gradient(-45deg, rgba(255,112,96,0.35) 0%, rgba(255,112,96,0) 100%);
-	background-image: -ms-linear-gradient(-45deg, rgba(255,112,96,0.35) 0%, rgba(255,112,96,0) 100%);
-	background-image: linear-gradient(135deg, rgba(255,112,96,0.35) 0%, rgba(255,112,96,0) 100%);
+	background: #2c2d3d;
+	background: -moz-linear-gradient(top,  #2c2d3d 0%, #474D60 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #2c2d3d 0%,#474D60 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to top left,  #2c2d3d 0%,#474D60 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c2d3d', endColorstr='#474D60',GradientType=0 ); /* IE6-9 */
 }
 
 .hero-caption {
