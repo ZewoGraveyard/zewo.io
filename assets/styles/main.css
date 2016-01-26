@@ -10,6 +10,7 @@ body {
 
 .logo-small-caption {
 	float: right;
+	font-weight: 300;
 }
 
 .hero {
@@ -37,16 +38,19 @@ body {
 	color: #FFFFFF;
 	font-size: 2.5rem;
 	padding: 3rem 0 1rem 0;
+	font-weight: 300;
 }
 
 .hero h2 {
 	color: #FFFFFF;
 	font-size: 2.5rem;
+	font-weight: 300;
 }
 
 .hero h3 {
-	color: #8D91AE;
+	color: rgba(255, 255, 255, 0.5);
 	font-size: 1.5rem;
+	font-weight: 300;
 }
 
 .github-button {
@@ -74,6 +78,8 @@ body {
 
 .featurette h3 {
 	color: #676872;
+	font-weight: 300;
+	font-size: 1.5rem;
 }
 
 .featurette p {
@@ -82,7 +88,7 @@ body {
 
 .featurette-image {
 	width: 100%;
-	max-width: 200px;
+	max-width: 300px;
 	max-height: 200px;
 	margin-bottom: 2rem;
 }
@@ -122,38 +128,38 @@ body {
 
 
 @media (min-width: 48em) {
-	
+
 	.hero-caption {
 		padding: 10rem 0;
 	}
-	
+
 	.hero h1 {
 		font-size: 3.25rem;
 	}
-	
+
 	.featurette {
 		padding: 5rem 0;
 		text-align: left;
 	}
-	
+
 	.featurette-image.center-block {
 		margin: 0;
 	}
-	
+
 	.featurette.alt .center-block {
 		margin-left: auto;
 	}
-	
+
 }
 
 @media (min-width: 62em) {
-	
+
 	.hero-caption-break {
 		display: block;
 	}
-	
+
 	.featurette {
 		padding: 10rem 1rem;
 	}
-	
+
 }
