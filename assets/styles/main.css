@@ -14,11 +14,12 @@ body {
 }
 
 .hero {
-	background: #2c2d3d;
-	background: -moz-linear-gradient(top left,  #2c2d3d 0%, #474D60 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top left,  #2c2d3d 0%,#474D60 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to top left,  #2c2d3d 0%,#474D60 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c2d3d', endColorstr='#474D60',GradientType=0 ); /* IE6-9 */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#634451+0,2c2d3d+100 */
+	background: #634451; /* Old browsers */
+	background: -moz-radial-gradient(top, ellipse cover,  #634451 0%, #2c2d3d 100%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(top, ellipse cover,  #634451 0%,#2c2d3d 100%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at top,  #634451 0%,#2c2d3d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#634451', endColorstr='#2c2d3d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .hero-caption {
