@@ -126,6 +126,51 @@ body {
 	text-decoration: none;
 }
 
+.snippet-row {
+	margin-top: 2rem;
+}
+
+.carousel-indicators {
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+    position: relative;
+}
+
+.carousel-indicators li {
+    width: 140px;
+    height: auto;
+	text-indent: 0;
+    border-radius: 3px;
+	padding: 0.25rem;
+	border-bottom: 1px solid #F1F0F5;
+}
+
+.carousel-indicators li.active {
+    width: 140px;
+    height: auto;
+	border-bottom: 1px solid black;
+	border-radius: 0;
+}
+
+.hljs {
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	tab-size: 4;
+	font-size: 10px;
+	background: #FCFCFD;
+	border: 1px solid #F1F0F5;
+	padding: 1rem;
+}
+
+.hljs [data-toggle="tooltip"] {
+	outline: 1px solid #FF442B;
+	outline-offset: 2px;
+}
 
 @media (min-width: 48em) {
 
@@ -148,6 +193,10 @@ body {
 
 	.featurette.alt .center-block {
 		margin-left: auto;
+	}
+	
+	.hljs {
+		font-size: 12px;
 	}
 
 }
