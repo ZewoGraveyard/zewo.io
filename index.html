@@ -132,34 +132,29 @@ try Server(
                                     </div>
                                     <pre><code class="hljs swift">import HTTPServer
 import Router
+import ResourcefulRoute
 
-let v1 = Router("/v1") { route in
-    route.get("/version") { request in
-        return Response(body: "Version: 1.0.3")
-    }
-}
-
-let v2 = Router("/v2") { route in
-    route.get("/users", UserResources.index)
+let users = Router { route in
+    route.get("/users", <span data-toggle="tooltip" title="">UserResources.index</span>)
     route.get("/users/:id", UserResources.show)
     route.post("/users", UserResources.create)
-    route.put("/users/:id", UserResources.update)
+    route.<span data-toggle="tooltip" title="">put</span>("/users/:id", UserResources.update)
     route.delete("/users/:id", UserResources.destroy)
 }
 
-let v3 = Router("/v3") { route in
-    route.supply("/videos", resources: VideoResources())
-}
+let app = Router(<span data-toggle="tooltip" title="">matcher</span>: TrieRouteMatcher.self) { route in
+    route.get("/hello") { _ in
+        return Response(body: "hello world")
+    }
 
-let api = Router("/api") { route in
-    route.compose(v1)
-    route.compose(v2)
-    route.compose(v3)
-}
+    route.get("/hello/<span data-toggle="tooltip" title="">:name</span>") { request in
+    	let name = request.pathParameters["name"]!
+        return Response(body: "hello \(name)")
+    }
 
-let app = Router(matcher: TrieRouteMatcher.self) { route in
-    route.compose(api)
-    route.fallback = FileResponder(path: "public")
+    route.<span data-toggle="tooltip" title="">compose</span>(users)
+    route.<span data-toggle="tooltip" title="">resources</span>("/videos", VideoResources())
+    route.<span data-toggle="tooltip" title="">fallback</span> = FileResponder(path: "public")
 }
 
 try Server(app).start()</code></pre>
