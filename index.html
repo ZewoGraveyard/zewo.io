@@ -134,12 +134,9 @@ try Server(
 import Router
 import ResourcefulRoute
 
-let users = Router { route in
-    route.get("/users", <span data-toggle="tooltip" title="">UserResources.index</span>)
-    route.get("/users/:id", UserResources.show)
-    route.post("/users", UserResources.create)
-    route.<span data-toggle="tooltip" title="">put</span>("/users/:id", UserResources.update)
-    route.delete("/users/:id", UserResources.destroy)
+let v1 = Router("/v1") { route in
+    route.post("/users", span data-toggle="tooltip" title="">UserResources.create</span>)
+    route.<span data-toggle="tooltip" title="">delete</span>("/users/:id", UserResources.destroy)
 }
 
 let app = Router(<span data-toggle="tooltip" title="">matcher</span>: TrieRouteMatcher.self) { route in
@@ -152,7 +149,7 @@ let app = Router(<span data-toggle="tooltip" title="">matcher</span>: TrieRouteM
         return Response(body: "hello \(name)")
     }
 
-    route.<span data-toggle="tooltip" title="">compose</span>(users)
+    route.<span data-toggle="tooltip" title="">compose</span>("/api", v1)
     route.<span data-toggle="tooltip" title="">resources</span>("/videos", VideoResources())
     route.<span data-toggle="tooltip" title="">fallback</span> = FileResponder(path: "public")
 }
