@@ -134,26 +134,30 @@ try Server(
 import Router
 
 let v1 = Router("/v1") { route in
-    route.get("/users") { request in
-        let users = getAllUsers()
-        return Response(body: users)
+    route.get("/version") { request in
+        return Response(body: "Version: 1.0.3")
     }
 }
 
 let v2 = Router("/v2") { route in
-    route.get("/users", responder: UserResource.index)
-    route.get("/users/:id", responder: UserResource.show)
-    route.post("/users", responder: UserResource.create)
-    route.put("/users/:id", responder: UserResource.update)
-    route.delete("/users/:id", responder: UserResource.destroy)
+    route.get("/users", UserResources.index)
+    route.get("/users/:id", UserResources.show)
+    route.post("/users", UserResources.create)
+    route.put("/users/:id", UserResources.update)
+    route.delete("/users/:id", UserResources.destroy)
+}
+
+let v3 = Router("/v3") { route in
+    route.supply("/videos", resources: VideoResources())
 }
 
 let api = Router("/api") { route in
     route.compose(router: v1)
     route.compose(router: v2)
+    route.compose(router: v3)
 }
 
-let app = Router { route in
+let app = Router(matcher: TrieRouteMatcher.self) { route in
     route.compose(router: api)
     route.fallback = FileResponder(basePath: "public")
 }
