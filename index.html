@@ -123,7 +123,7 @@ try Server(
     port: 443,
     certificate: "cert.pem",
     privateKey: "key.pem",
-    <span data-toggle="tooltip" title="A responder is simply a type that receives an HTTP request and returns an HTTP response. A router is probably what you want.">responder</span>: responder
+    <span data-toggle="tooltip" title="A responder is simply a type that receives an HTTP request and returns an HTTP response. The responder you'll probably use the most will be the Router.">responder</span>: responder
 ).start()</code></pre>
                                 </div>
                                 <div class="carousel-item" style="padding: 1rem;">
@@ -159,10 +159,10 @@ let api = Router("/api") { route in
 
 let app = Router(matcher: TrieRouteMatcher.self) { route in
     route.compose(router: api)
-    route.fallback = FileResponder(basePath: "public")
+    route.fallback = FileResponder(path: "public")
 }
 
-try Server(responder: router).start()</code></pre>
+try Server(router).start()</code></pre>
                                 </div>
                                 <div class="carousel-item" style="padding: 1rem;">
                                     <div style="text-align: center; padding-bottom: 1rem;">
@@ -186,7 +186,7 @@ let router = Router(middleware: contentNegotiator) { route in
     }
 }
 
-try Server(responder: router).start()</code></pre>
+try Server(router).start()</code></pre>
                                 </div>
                             </div>
                         </div>
