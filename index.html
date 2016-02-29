@@ -108,14 +108,14 @@
                                     <pre><code class="hljs swift">import HTTPServer
 import HTTPSServer
 
-let responder = Responder { request in
+let hello = Responder { request in
     return Response(body: "hello world")
 }
 
 try Server(
     <span data-toggle="tooltip" title="With reusePort enabled you can run as many process instances as you like, all listening on the same address/port combination.">reusePort</span>: true,
     port: 80,
-    responder: responder
+    responder: hello
 ).<span data-toggle="tooltip" title="If you want to run more than one server listening on different ports on the same process, just start one of them in the background.">startInBackground()</span>
 
 try Server(
@@ -123,7 +123,7 @@ try Server(
     port: 443,
     certificate: "cert.pem",
     privateKey: "key.pem",
-    <span data-toggle="tooltip" title="A responder is simply a type that receives an HTTP request and returns an HTTP response. The responder you'll probably use the most will be the Router.">responder</span>: responder
+    <span data-toggle="tooltip" title="A responder is simply a type that receives an HTTP request and returns an HTTP response. The responder you'll probably use the most will be the Router.">responder</span>: hello
 ).start()</code></pre>
                                 </div>
                                 <div class="carousel-item" style="padding: 1rem;">
