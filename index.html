@@ -152,13 +152,13 @@ let v3 = Router("/v3") { route in
 }
 
 let api = Router("/api") { route in
-    route.compose(router: v1)
-    route.compose(router: v2)
-    route.compose(router: v3)
+    route.compose(v1)
+    route.compose(v2)
+    route.compose(v3)
 }
 
 let app = Router(matcher: TrieRouteMatcher.self) { route in
-    route.compose(router: api)
+    route.compose(api)
     route.fallback = FileResponder(path: "public")
 }
 
