@@ -123,7 +123,7 @@ try Server(
     port: 443,
     certificate: "cert.pem",
     privateKey: "key.pem",
-    <span data-toggle="tooltip" title="A responder is simply a type that receives an HTTP request and returns an HTTP response. The responder you'll probably use the most will be the Router.">responder</span>: hello
+    <span data-toggle="tooltip" title="A responder is simply a type that receives an HTTP request and returns an HTTP response. Router will probably be the responder you'll use the most here.">responder</span>: hello
 ).start()</code></pre>
                                 </div>
                                 <div class="carousel-item" style="padding: 1rem;">
@@ -135,8 +135,7 @@ import Router
 import ResourcefulRoute
 
 let v1 = Router("/v1") { route in
-    route.post("/users", <span data-toggle="tooltip" title="">UsersResource.create</span>)
-    route.<span data-toggle="tooltip" title="">delete</span>("/users/:id", UsersResource.destroy)
+    route.<span data-toggle="tooltip" title="">post</span>("/users", <span data-toggle="tooltip" title="">CreateUserResponder()</span>)
 }
 
 let app = Router(<span data-toggle="tooltip" title="">matcher</span>: TrieRouteMatcher.self) { route in
