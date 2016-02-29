@@ -162,7 +162,7 @@ let app = Router(matcher: TrieRouteMatcher.self) { route in
     route.fallback = FileResponder(path: "public")
 }
 
-try Server(router).start()</code></pre>
+try Server(app).start()</code></pre>
                                 </div>
                                 <div class="carousel-item" style="padding: 1rem;">
                                     <div style="text-align: center; padding-bottom: 1rem;">
@@ -177,7 +177,7 @@ import ContentMapperMiddleware
 let contentNegotiator = ContentNegotiationMiddleware(mediaTypes: JSONMediaType())
 let userMapper = ContentMapperMiddleware(mappingTo: User.self)
 
-let router = Router(middleware: contentNegotiator) { route in
+let app = Router(middleware: contentNegotiator) { route in
     route.post("/users", middleware: userMapper) { request in
         guard let user = request.user else {
             return Response(status: .BadRequest)
@@ -186,7 +186,7 @@ let router = Router(middleware: contentNegotiator) { route in
     }
 }
 
-try Server(router).start()</code></pre>
+try Server(app).start()</code></pre>
                                 </div>
                             </div>
                         </div>
