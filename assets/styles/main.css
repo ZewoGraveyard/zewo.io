@@ -141,7 +141,7 @@ body {
 }
 
 .carousel-indicators li {
-    width: 160px;
+    width: 140px;
     height: auto;
 	text-indent: 0;
     border-radius: 3px;
@@ -150,7 +150,7 @@ body {
 }
 
 .carousel-indicators li.active {
-    width: 160px;
+    width: 140px;
     height: auto;
 	border-bottom: 1px solid black;
 	border-radius: 0;

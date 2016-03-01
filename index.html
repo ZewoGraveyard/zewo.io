@@ -98,7 +98,7 @@
                             <ol class="carousel-indicators">
                                 <li data-target="#myCarousel" data-slide-to="0" class="active">HTTP Server</li>
                                 <li data-target="#myCarousel" data-slide-to="1">Router</li>
-                                <li data-target="#myCarousel" data-slide-to="2">Content Negotiation</li>
+                                <li data-target="#myCarousel" data-slide-to="2">Middleware</li>
                             </ol>
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active" style="padding: 1rem;">
@@ -159,25 +159,23 @@ try Server(app).start()</code></pre>
                                     <div style="text-align: center; padding-bottom: 1rem;">
 
                                     </div>
-                                    <pre><code class="hljs swift">import HTTPServer
-import Router
-import JSONMediaType
-import ContentNegotiationMiddleware
-import ContentMapperMiddleware
+                                    <pre><code class="hljs swift">import <span data-toggle="tooltip" title="">Zewo</span>
 
-let contentNegotiator = ContentNegotiationMiddleware(mediaTypes: JSONMediaType())
+let logger = LoggerMiddleware(log: Log())
+let contentNegotiator = ContentNegotiationMiddleware(mediaTypes: JSONMediaType(), URLEncodedFormMediaType())
 let userMapper = ContentMapperMiddleware(mappingTo: User.self)
 
 let app = Router(middleware: contentNegotiator) { route in
     route.post("/users", middleware: userMapper) { request in
-        guard let user = request.user else {
+        guard let user = request.<span data-toggle="tooltip" title="">user</span> else {
             return Response(status: .BadRequest)
         }
+        User.save(user)
         return Response(content: user)
     }
 }
 
-try Server(app).start()</code></pre>
+try Server(<span data-toggle="tooltip" title="">middleware</span>: logger, responder: app).start()</code></pre>
                                 </div>
                             </div>
                         </div>
