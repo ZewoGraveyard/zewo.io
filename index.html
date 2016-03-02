@@ -132,7 +132,7 @@ try Server(
                                     </div>
                                     <pre><code class="hljs swift">import HTTPServer
 import Router
-import ResourcefulRoute
+import <span data-toggle="tooltip" title="You can add functionality to the Router through extensions defined in another module.">ResourcefulRoute</span>
 
 let v1 = Router("/v1") { route in
     route.post("/users", CreateUserResponder())
@@ -199,7 +199,7 @@ try Server(<span data-toggle="tooltip" title="Middleware are applied to responde
                         <h2>Go-style concurrency</h2>
                         <h3>Concurrent programming without callbacks</h3>
                         <p>
-                            What many have come to love with the <a href="https://golang.org" target="_blank">Go</a> programming language is its concurrency model. Go uses <a href="https://en.wikipedia.org/wiki/Communicating_sequential_processes" target="_blank">CSP</a> (Communicating Sequential Processes), which is something that Zewo brings to Swift using <a href="http://libmill.org" target="_blank">libmill</a>. Say goodbye to callback hell, and meet your new favourite way of building concurrent software!
+                            What many have come to love with the <a href="https://golang.org" target="_blank">Go</a> programming language is its concurrency model. Go uses <a href="https://en.wikipedia.org/wiki/Communicating_sequential_processes" target="_blank">CSP</a> (Communicating Sequential Processes), which Zewo brings to Swift using <a href="http://libmill.org" target="_blank">libmill</a>. Say goodbye to callback hell, and meet your new favourite way of building concurrent software!
                         </p>
                     </div>
                 </div>
