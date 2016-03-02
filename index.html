@@ -135,22 +135,22 @@ import Router
 import ResourcefulRoute
 
 let v1 = Router("/v1") { route in
-    route.<span data-toggle="tooltip" title="">post</span>("/users", <span data-toggle="tooltip" title="">CreateUserResponder()</span>)
+    route.post("/users", CreateUserResponder())
 }
 
-let app = Router(<span data-toggle="tooltip" title="">matcher</span>: TrieRouteMatcher.self) { route in
+let app = Router(<span data-toggle="tooltip" title="Router is flexible and allows you to supply your own route matcher if you please.">matcher</span>: TrieRouteMatcher.self) { route in
     route.get("/hello") { _ in
         return Response(body: "hello world")
     }
 
-    route.get("/hello/<span data-toggle="tooltip" title="">:name</span>") { request in
-    	let name = request.pathParameters["name"]!
+    route.get("/hello/<span data-toggle="tooltip" title="Define path parameters using ':parameterName' syntax.">:name</span>") { request in
+    	let name = request.<span data-toggle="tooltip" title="Access path parameters through the pathParameters property.">pathParameters</span>["name"]!
         return Response(body: "hello \(name)")
     }
 
-    route.<span data-toggle="tooltip" title="">compose</span>("/api", v1)
-    route.<span data-toggle="tooltip" title="">resources</span>("/videos", VideoResources())
-    route.<span data-toggle="tooltip" title="">fallback</span> = FileResponder(path: "public")
+    route.<span data-toggle="tooltip" title="You can compose routers within routers. This allows you to better organize and reuse your code.">compose</span>("/api", v1)
+    route.<span data-toggle="tooltip" title="Through extensions you could add opinionated functions like resource that creates all routes needed for a resource.">resources</span>("/videos", VideoResources())
+    route.<span data-toggle="tooltip" title="You can use the fallback to serve static files in chosen directory.">fallback</span> = FileResponder(path: "public")
 }
 
 try Server(app).start()</code></pre>
