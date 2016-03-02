@@ -150,7 +150,7 @@ let app = Router(<span data-toggle="tooltip" title="Router is flexible and allow
 
     route.<span data-toggle="tooltip" title="You can compose routers within routers. This allows you to better organize and reuse your code.">compose</span>("/api", v1)
     route.<span data-toggle="tooltip" title="Through extensions you could add opinionated functions like resource that creates all routes needed for a resource.">resources</span>("/videos", VideoResources())
-    route.<span data-toggle="tooltip" title="You can use the fallback to serve static files in chosen directory.">fallback</span> = FileResponder(path: "public")
+    route.<span data-toggle="tooltip" title="Fallback lets you serve static files from a chosen directory, for example.">fallback</span> = FileResponder(path: "public")
 }
 
 try Server(app).start()</code></pre>
