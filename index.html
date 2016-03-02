@@ -128,7 +128,7 @@ try Server(
                                 </div>
                                 <div class="carousel-item" style="padding: 1rem;">
                                     <div style="text-align: center; padding-bottom: 1rem;">
-
+										You'll probably want to use a router to organize your web application. Luckily, we have an excellent Router module for that.
                                     </div>
                                     <pre><code class="hljs swift">import HTTPServer
 import Router
@@ -157,9 +157,9 @@ try Server(app).start()</code></pre>
                                 </div>
                                 <div class="carousel-item" style="padding: 1rem;">
                                     <div style="text-align: center; padding-bottom: 1rem;">
-
+										Middleware allows you to reuse code for common tasks and make your life a lot easier.
                                     </div>
-                                    <pre><code class="hljs swift">import <span data-toggle="tooltip" title="">Zewo</span>
+                                    <pre><code class="hljs swift">import <span data-toggle="tooltip" title="We provide an umbrella package that contains the most important Zewo modules.">Zewo</span>
 
 let logger = LoggerMiddleware(log: Log())
 let contentNegotiator = ContentNegotiationMiddleware(mediaTypes: JSONMediaType(), URLEncodedFormMediaType())
@@ -167,7 +167,7 @@ let userMapper = ContentMapperMiddleware(mappingTo: User.self)
 
 let app = Router(middleware: contentNegotiator) { route in
     route.post("/users", middleware: userMapper) { request in
-        guard let user = request.<span data-toggle="tooltip" title="">user</span> else {
+        guard let user = request.<span data-toggle="tooltip" title="You can define type-safe computed properties to requests through extensions.">user</span> else {
             return Response(status: .BadRequest)
         }
         let id = User.save(user)
@@ -175,7 +175,7 @@ let app = Router(middleware: contentNegotiator) { route in
     }
 }
 
-try Server(<span data-toggle="tooltip" title="">middleware</span>: logger, responder: app).start()
+try Server(<span data-toggle="tooltip" title="Middleware are applied to responders. So almost all places that take a responder can also take middleware. Server, router, routes, etc.">middleware</span>: logger, responder: app).start()
 
 
 
