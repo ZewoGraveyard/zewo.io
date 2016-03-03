@@ -181,15 +181,7 @@ let app = Router(middleware: contentNegotiator) { route in
     }
 }
 
-try Server(<span data-toggle="tooltip" title="Middleware are applied to responders. So almost all places that take a responder can also take middleware. Server, router, routes, etc.">middleware</span>: logger, responder: app).start()
-
-
-
-
-
-
-
-</code></pre>
+try Server(<span data-toggle="tooltip" title="Middleware are applied to responders. So almost all places that take a responder can also take middleware. Server, router, routes, etc.">middleware</span>: logger, responder: app).start()</code></pre>
                                 </div>
                             </div>
                         </div>
