@@ -7,9 +7,13 @@
         <meta name="description" content="Open source libraries for modern and blazing fast server software.">
         <meta name="author" content="Zewo">
         <meta property="og:title" content="Zewo" />
+        <meta property="og:description" content="Open source libraries for modern and blazing fast server software." />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="http://zewo.io/" />
-	<meta property="og:image" content="http://zewo.io/assets/images/logo-dark.png" />
+	<meta property="og:url" content="http://www.zewo.io/" />
+	<meta property="og:image" content="http://www.zewo.io/assets/images/logo-dark.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="1200" />
+	<meta property="fb:app_id" content="679956515480783" />
         <link rel="icon" href="favicon.ico">
         <title>Zewo</title>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
@@ -20,6 +24,23 @@
         <link rel="stylesheet" type="text/css" href="/assets/styles/main.css">
     </head>
     <body>
+    	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '679956515480783',
+	      xfbml      : true,
+	      version    : 'v2.5'
+	    });
+	  };
+	
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
         <div class="pos-f-t">
             <nav class="navbar navbar-static-top navbar-dark">
                 <div class="container">
