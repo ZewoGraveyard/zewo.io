@@ -29,7 +29,7 @@
 	* as the event label. Setting the transport method to 'beacon' lets the hit be sent
 	* using 'navigator.sendBeacon' in browser that support it.
 	*/
-	var trackOutboundLink = function(name) {
+	var trackOutboundLink = function(url, name) {
 	   ga('send', 'event', 'outbound', 'click', name, {
 	     'transport': 'beacon',
 	     'hitCallback': function(){document.location = url;}
@@ -69,22 +69,22 @@
                         <div class="hidden-xs-down">
                             <ul class="nav navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="https://github.com/Zewo/Zewo" onclick="trackOutboundLink('github'); return false;"><i class="fa fa-github"></i> Github</a>
+                                    <a class="nav-link" href="https://github.com/Zewo/Zewo" onclick="trackOutboundLink('https://github.com/Zewo/Zewo', 'github'); return false;"><i class="fa fa-github"></i> Github</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="http://docs.zewo.io" onclick="trackOutboundLink('docs'); return false;"><i class="fa fa-book"></i> Docs</a>
+                                    <a class="nav-link" href="http://docs.zewo.io" onclick="trackOutboundLink('http://docs.zewo.io', 'docs'); return false;"><i class="fa fa-book"></i> Docs</a>
                                 </li>
                                 <li class="nav-item">
-									<a class="nav-link" href="https://blog.zewo.io" onclick="trackOutboundLink('blog'); return false;"><i class="fa fa-pencil"></i> Blog</a>
+									<a class="nav-link" href="https://blog.zewo.io" onclick="trackOutboundLink('https://blog.zewo.io', 'blog'); return false;"><i class="fa fa-pencil"></i> Blog</a>
 								</li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="http://slack.zewo.io" onclick="trackOutboundLink('slack'); return false;"><i class="fa fa-slack"></i> Slack</a>
+                                    <a class="nav-link" href="http://slack.zewo.io" onclick="trackOutboundLink('http://slack.zewo.io', 'slack'); return false;"><i class="fa fa-slack"></i> Slack</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="https://twitter.com/codezewo" onclick="trackOutboundLink('twitter'); return false;"><i class="fa fa-twitter"></i> Twitter</a>
+                                    <a class="nav-link" href="https://twitter.com/codezewo" onclick="trackOutboundLink('https://twitter.com/codezewo', 'twitter'); return false;"><i class="fa fa-twitter"></i> Twitter</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="mailto:hello@zewo.io" onclick="trackOutboundLink('email'); return false;"><i class="fa fa-envelope"></i> Contact</a>
+                                    <a class="nav-link" href="mailto:hello@zewo.io" onclick="trackOutboundLink('mailto:hello@zewo.io', 'email'); return false;"><i class="fa fa-envelope"></i> Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -95,22 +95,22 @@
                 <div class="container-fluid bg-inverse p-a-1">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/Zewo/Zewo" onclick="trackOutboundLink('github-mobile'); return false;"><i class="fa fa-github"></i> Github</a>
+                            <a class="nav-link" href="https://github.com/Zewo/Zewo" onclick="trackOutboundLink('https://github.com/Zewo/Zewo', 'github-mobile'); return false;"><i class="fa fa-github"></i> Github</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://docs.zewo.io" onclick="trackOutboundLink('docs-mobile'); return false;"><i class="fa fa-book"></i> Docs</a>
+                            <a class="nav-link" href="http://docs.zewo.io" onclick="trackOutboundLink('http://docs.zewo.io', 'docs-mobile'); return false;"><i class="fa fa-book"></i> Docs</a>
                         </li>
                         <li class="nav-item">
-							<a class="nav-link" href="https://blog.zewo.io" onclick="trackOutboundLink('blog-mobile'); return false;"><i class="fa fa-pencil"></i> Blog</a>
+							<a class="nav-link" href="https://blog.zewo.io" onclick="trackOutboundLink('https://blog.zewo.io', 'blog-mobile'); return false;"><i class="fa fa-pencil"></i> Blog</a>
 						</li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://slack.zewo.io" onclick="trackOutboundLink('slack-mobile'); return false;"><i class="fa fa-slack"></i> Slack</a>
+                            <a class="nav-link" href="http://slack.zewo.io" onclick="trackOutboundLink('http://slack.zewo.io', 'slack-mobile'); return false;"><i class="fa fa-slack"></i> Slack</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://twitter.com/codezewo" onclick="trackOutboundLink('twitter-mobile'); return false;"><i class="fa fa-twitter"></i> Twitter</a>
+                            <a class="nav-link" href="https://twitter.com/codezewo" onclick="trackOutboundLink('https://twitter.com/codezewo', 'twitter-mobile'); return false;"><i class="fa fa-twitter"></i> Twitter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="mailto:hello@zewo.io" onclick="trackOutboundLink('email-mobile'); return false;"><i class="fa fa-envelope"></i> Contact</a>
+                            <a class="nav-link" href="mailto:hello@zewo.io" onclick="trackOutboundLink('mailto:hello@zewo.io', 'email-mobile'); return false;"><i class="fa fa-envelope"></i> Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -122,7 +122,7 @@
                 <h2>Zewo</h2>
                 <h1>Build server software in Swift</h1>
                 <h3>Zewo is a set of open source libraries that help you build <br class="hero-caption-break">modern and blazing fast server software.</h3>
-                <a href="https://github.com/Zewo/Zewo" onclick="trackOutboundLink('github-cta-1'); return false;">
+                <a href="https://github.com/Zewo/Zewo" onclick="trackOutboundLink('https://github.com/Zewo/Zewo', 'github-cta-1'); return false;">
                     <img class="github-button" src="/assets/images/get-started-on-github.svg" alt="Github">
                 </a>
             </div>
